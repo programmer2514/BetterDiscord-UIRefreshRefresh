@@ -2,7 +2,7 @@
  * @name UI Refresh Refresh
  * @author programmer2514
  * @description Enjoy Discord's UI refresh without the visual inconsistencies.
- * @version 1.4.0
+ * @version 1.4.1
  */
 
 :root {
@@ -107,6 +107,10 @@
 
 .scrollableContainer__74017 {
     background: var(--bg-overlay-floating, var(--background-base-low))
+}
+
+.wrapper__44df5 {
+    margin-bottom: var(--space-xs);
 }
 
 .chatLayerWrapper__01ae2 {
