@@ -2,45 +2,56 @@
  * @name UI Refresh Refresh
  * @author programmer2514
  * @description Enjoy Discord's UI refresh without the visual inconsistencies.
- * @version 1.4.1
+ * @version 1.5.0
  */
 
 :root {
     --uirr-forum-panel-width: 450px;
 }
 
+#app-mount {
+    border: 1px solid var(--border-subtle);
+    width: calc(100% - 2px) !important;
+    height: calc(100% - 2px) !important;
+}
+
 *[class] {
     --app-border-frame: var(--border-subtle);
-    --border-faint: var(--border-subtle);
+    --border-muted: var(--border-subtle);
 }
 
 .visual-refresh {
     --custom-guild-list-padding: min(var(--space-sm));
 }
 
-.sidebarListRounded_c48ade,
-.sidebar_c48ade,
-.page_c48ade {
+.sidebarListRounded__5e434,
+.sidebar__5e434,
+.page__5e434 {
     border-radius: 0 !important;
     border-left: none !important;
 }
 
-.guilds_c48ade {
+.guilds__5e434 {
     border-top: 1px solid var(--border-subtle);
     border-right: 1px solid var(--border-subtle);
 }
 
 .tree_ef3116 {
-    padding-top: var(--space-xxs) !important;
+    padding-top: var(--space-xs) !important;
 }
 
-.platform-win .title_c38106 {
+.platform-win .title_c38106,
+.platform-linux .title_c38106 {
     justify-content: start;
     margin-left: var(--space-xs);
 }
 
-.title_bb0d86 div:last-child::before {
+.title_edbb22 div:last-child::before {
     content: "Discord - ";
+}
+
+.bar_c38106 {
+    width: 100%;
 }
 
 .winButtons_c38106 {
@@ -88,25 +99,27 @@
     gap: var(--space-xxs);
 }
 
-.iconWrapper__9293f:hover,
-.clickable_c99c29:hover {
-    background-color: var(--background-modifier-selected);
+.clickable__9293f:hover {
+    background-color: var(--interactive-background-selected) !important;
 }
 
-.iconWrapper__9293f:hover > *,
-.clickable_c99c29:hover > * {
+.clickable__9293f:hover > * {
     opacity: 1;
     animation: buttonWiggle 800ms linear 0s 1 normal none;
     color: var(--interactive-active) !important;
 }
 
-.iconWrapper__9293f:active > *,
-.clickable_c99c29:active > * {
+.clickable__9293f:active > * {
     animation: buttonJump 400ms linear 0s 1 normal none;
 }
 
 .scrollableContainer__74017 {
-    background: var(--bg-overlay-floating, var(--background-base-low))
+    background: var(--bg-overlay-floating, var(--background-base-low));
+}
+
+.searchBar__97492 {
+    background: var(--bg-overlay-floating, var(--background-base-low));
+    border: 1px solid var(--border-subtle);
 }
 
 .wrapper__44df5 {
@@ -166,11 +179,12 @@ section.container__9293f:has(.hoverableContainer__754bd) {
 .container_fc561d,
 .header_ab6641,
 .channelHeader__35a7e,
-.container_d404a3 {
+.container_d404a3,
+.messagesPopout_e8b59c {
     background-color: var(--background-base-low) !important;
 }
 
-.header__45690 {
+.header_e8b59c {
     border-bottom: none;
 }
 
@@ -180,6 +194,16 @@ section.container__9293f:has(.hoverableContainer__754bd) {
 
 .messages__1ccd1 {
     background-color: var(--background-base-lower) !important;
+    padding: 0 var(--space-lg) var(--space-sm) var(--space-xs);
+}
+
+.messageContainer__95796 {
+    background-color: var(--background-base-lower) !important;
+    padding: var(--space-md) var(--space-xl) var(--space-lg) var(--space-xxs);
+}
+
+.showAllButtonContainer__1ccd1 {
+    margin-top: var(--space-xs);
 }
 
 .container_fc561d {
@@ -199,57 +223,24 @@ div:has(> .wrapper__1405b) {
     max-width: 100%;
 }
 
-.top_b3f026 {
+.content_e9e3ed,
+.contentHeader_e9e3ed {
+    background-color: var(--background-base-lowest);
+}
+
+.top_aa8da2 {
     gap: var(--space-xl);
     max-width: 100%;;
 }
 
-.top_b3f026 > .item_b3f026 {
+.top_aa8da2 > .item_aa8da2 {
     margin: 0 !important;
     padding: 0 var(--space-xxs) var(--space-sm) !important;
 }
 
-.contentRegion__23e6b,
-.contentRegionScroller__23e6b {
-    background: var(--background-base-lower) !important;
-}
-
-.settingsPage_f131e9 > h3 {
-    font-size: 20px;
-}
-
-.container_dc2e0e::before {
-    content: "Family Center";
-    font-family: var(--font-display);
-    font-size: 20px;
-    line-height: 1.25;
-    font-weight: 600;
-    color: var(--header-primary);
-    margin-bottom: 32px;
-}
-
-.item__1bda4 {
+.item__88a69 {
     border: 1px solid var(--input-border);
     background: var(--input-background);
-}
-
-#profile-customization-tab h2 {
-    color: var(--header-primary)
-}
-
-.bd-addon-card,
-.bd-store-card,
-.bd-addon-store-card {
-    border-radius: var(--radius-sm) !important;
-    border: 1px solid var(--border-subtle);
-}
-
-.bd-links {
-    gap: var(--space-sm);
-}
-
-.bd-links .bd-addon-button:not(:first-child) {
-    margin-left: 0 !important;
 }
 
 .bd-addon-store-modal {
@@ -262,12 +253,15 @@ div:has(> .wrapper__1405b) {
     overflow: visible !important;
 }
 
+.bf-toolbar {
+    right: -4px;
+}
+
 .bf-toolbar::before {
     background: var(--background-base-low) !important;
     border-radius: var(--radius-sm) !important;
     border: 1px solid var(--border-subtle);
     height: calc(100% - 16px) !important;
-    left: -4px !important;
 }
 
 .bf-toolbar .format {
@@ -275,15 +269,19 @@ div:has(> .wrapper__1405b) {
     width: var(--space-32) !important;
     height: var(--space-32) !important;
     max-height: var(--space-32) !important;
-    margin-right: var(--space-xs) !important;
+    margin-right: var(--space-xxs) !important;
     margin-top: -2px;
     justify-content: center;
 }
 
 .bf-toolbar .format:hover {
-    background-color: var(--background-modifier-selected);
+    background-color: var(--interactive-background-selected);
     transition: background-color 0.2s;
     border-radius: 8px;
+}
+
+.bf-arrow {
+    bottom: -1px !important;
 }
 
 .theme-light .bf-toolbar .format > *,
@@ -330,7 +328,7 @@ main > section.container__9293f,
     border-top: 1px solid var(--border-subtle);
 }
 
-.sidebarRegion__23e6b {
+.sidebar__409aa {
     border-right: 1px solid var(--border-subtle);
 }
 
